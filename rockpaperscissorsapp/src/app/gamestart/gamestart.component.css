@@ -1,0 +1,42 @@
+html body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(1, 1, 92);
+
+      font-family: 'Itim', cursive;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 2;
+      font-size: 30px;
+
+}
+.gamepieces {
+
+width: 650px;
+height: 300px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.rock{
+  width: 650px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper{
+  width: 650px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scissors{
+  float: right;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
