@@ -1,83 +1,65 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using System;
 
 namespace RPSAPI.Controllers
 {
-    [Route("ResultController")]
+
+    [ApiController]
 
     public class ResultController : ControllerBase
     {
-       
-
         public ResultController()
         {
-            
-
-
         }
 
-        [HttpPost("Get Result")]
-        public string getresults()
+        [HttpPost("GetResult")]
+        public string getresults(string playerselection)
         {
-       
-            string playerselection = playRequest["PlayerChoice"];
-
-            
+            Console.WriteLine(playerselection);
             Random r = new Random();
             int computerChoice = r.Next(4);
             int playerwins = 0;
             int computerwins = 0;
             int tiedgame = 0;
 
+            Console.WriteLine(computerChoice);
 
             if (computerChoice == 1)
             //rock
             {
                 if (playerselection == "rock")
                 {
-                    tiedgame ++;
+                    tiedgame++;
                 }
-
                 else if (playerselection == "paper")
                 //paper
                 {
-                    playerwins ++;
-
+                    playerwins++;
                 }
                 else if (playerselection == "scissors")
                 {
-                    computerwins ++;
+                    computerwins++;
                 }
                 else
                 {
                     Console.WriteLine("You must choose rock,paper or scissors!");
-
                 }
-
             }
-
             else if (computerChoice == 2)
             //Paper
             {
                 if (playerselection == "rock")
                 {
                     computerwins++;
-
                 }
                 else if (playerselection == "paper")
                 {
                     tiedgame++;
-
                 }
                 else if (playerselection == "scissors")
                 {
                     playerwins++;
                 }
-                
             }
             else if (computerChoice == 3)
             //scissors
@@ -85,39 +67,33 @@ namespace RPSAPI.Controllers
                 if (playerselection == "rock")
                 {
                     playerwins++;
-
                 }
                 else if (playerselection == "paper")
                 {
                     computerwins++;
-
                 }
                 else if (playerselection == "scissors")
                 {
                     tiedgame++;
-
                 }
                 else
                 {
                     Console.WriteLine("You must choose rock,paper or scissors!");
-
                 }
             }
 
             if (playerwins > computerwins)
-             {
-                            
-                  return "You won!";
+            {
+                return "You won!";
             }
-            else {
-                
+            else
+            {
+                if (playerwins < computerwins)
+                {
+                    return "You lost! :( ";
+                }
             }
-
-
-
-            }
-
-
+            return "no";
         }
     }
-
+}

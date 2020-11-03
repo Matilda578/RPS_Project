@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { resultService } from "../../core/resultservice";
 
 @Component({
   selector: 'app-gamestart',
@@ -12,12 +13,15 @@ export class GamestartComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private resultservice: resultService) { }
 
   ngOnInit(): void {
   }
 
   SelectOption(option: 'Rock' | 'Paper' | 'Scissors'){
+
+    this.resultservice.commitSelection(option);
+
     console.log(option)
 
   }

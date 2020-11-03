@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { resultService } from '../../core/resultservice';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-resultscreen',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultscreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public resultService: resultService, private router: Router ) { }
 
   ngOnInit(): void {
+
   }
 
 }
+
