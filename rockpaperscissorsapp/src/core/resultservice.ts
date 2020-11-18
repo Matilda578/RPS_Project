@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-import {Result, PlayerChoice} from "../app/models/httpModels";
+import {Result, PlayerChoice, ComputerSelection} from "../app/models/httpModels";
 
 
 @Injectable({
@@ -12,7 +12,7 @@ import {Result, PlayerChoice} from "../app/models/httpModels";
 })
 export class resultService {
 
-  private _selection?: string;
+  private _selection?: Result;
 
   get selection(){
     return this._selection;
@@ -21,12 +21,21 @@ export class resultService {
   constructor(private router: Router, private client: HttpClient) { }
 
 
-  commitSelection(value: string) {
-    this.client.post<string>("http://localhost:5001/results", value,)
+
+ commitSelection(value: string) {
+
+
+    let playerchoiceVariable: PlayerChoice = {playerSelection:value};
+    let computerselectionVariable: ComputerSelection = {computerSelection:value}
+
+
+
+    this.client.post<Result>("https://localhost:5001/GetResult", playerchoiceVariable)
       .subscribe((response) => {
         console.log(response)
+
         this._selection = response;
-        this.router.navigateByUrl("/results");
+        this.router.navigateByUrl("/GetResult");
 
 
 

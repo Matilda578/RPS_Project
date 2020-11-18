@@ -5,7 +5,7 @@ import { ResultscreenComponent } from './resultscreen/resultscreen.component';
 
 const routes: Routes = [
   { path: "gamestart", component: GamestartComponent },
-  { path: "results", component: ResultscreenComponent },
+  { path: "GetResult", component: ResultscreenComponent },
 
 
 

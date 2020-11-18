@@ -1,7 +1,16 @@
 export interface PlayerChoice {
-  playerchoice: string;
+  playerSelection: string;
+}
+
+export interface ComputerSelection {
+  computerSelection: string;
 }
 
 export interface Result {
-  result: string;
+
+  resultofGame: string;
+
+  cPUResultofGame: number;
 }
+
+
