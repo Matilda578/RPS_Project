@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GamestartComponent } from './gamestart/gamestart.component';
 import { ResultscreenComponent } from './resultscreen/resultscreen.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ResultscreenComponent } from './resultscreen/resultscreen.component';
     AppComponent,
     GamestartComponent,
     ResultscreenComponent,
+    LeaderboardComponent,
 
   ],
   imports: [

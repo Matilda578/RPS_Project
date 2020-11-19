@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 </head>
 <body>
   <h1>Rock Paper Scissors</h1>
 
   <div id="Results">
 
-    <h2>Results: {{resultService.selection.resultofGame}}</h2>
+    <h2>Results</h2>
+    <p> {{resultService.selection.resultofGame}}</p>
 
   </div>
+  <button routerLink="/LeaderBoard">Leaderboard</button>
 
 
 </body>

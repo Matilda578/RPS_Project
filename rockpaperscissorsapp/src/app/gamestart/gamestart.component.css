@@ -3,6 +3,11 @@ title{
   justify-content: center;
 
   }
+  .h1{
+    font-family: 'Architects Daughter', cursive;
+    display: flex;
+    justify-content: center;
+  }
 
 
 html body {
@@ -10,10 +15,10 @@ html body {
   padding: 0;
   background-color: white;
 
-      font-family: 'Itim', cursive;
-      font-family: 'Montserrat', sans-serif;
+  font-family: 'Architects Daughter', cursive;
       line-height: 2;
       font-size: 30px;
+
 }
 
 .gamepieces{

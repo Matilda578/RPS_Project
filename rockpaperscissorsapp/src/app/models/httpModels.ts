@@ -14,3 +14,9 @@ export interface Result {
 }
 
 
+export interface LeaderboardResponse {
+
+  username: string,
+  winRatio: number,
+  turnPlayed: number
+}

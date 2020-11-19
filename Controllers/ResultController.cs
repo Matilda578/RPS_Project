@@ -20,7 +20,7 @@ namespace RPSAPI.Controllers
         {
             //Console.WriteLine(playerselection);
             Random r = new Random();
-            int computerChoice = r.Next(4);
+            int computerChoice = r.Next(1, 4);
             int playerwins = 0;
             int computerwins = 0;
             int tiedgame = 0;
@@ -30,19 +30,25 @@ namespace RPSAPI.Controllers
             Console.WriteLine($"firstcomputer record: {computerChoice}");
             Console.WriteLine($"you chose: {playerselection}");
 
+
+
             if (computerChoice == 1)
-            //rock
+                //rock
+     
             {
-                if (playerselection == "rock")
+                Console.WriteLine($"this cpu choice is {computerChoice}");
+                Console.WriteLine($"this player selection choice is {playerselection}");
+                if (playerselection == "Rock")
                 {
                     tiedgame++;
+
                 }
-                else if (playerselection == "paper")
+                else if (playerselection == "Paper")
                 //paper
                 {
                     playerwins++;
                 }
-                else if (playerselection == "scissors")
+                else if (playerselection == "Scissors")
                 {
                     computerwins++;
                 }
@@ -51,15 +57,17 @@ namespace RPSAPI.Controllers
             else if (computerChoice == 2)
             //Paper
             {
-                if (playerselection == "rock")
+                Console.WriteLine($"this cpu choice is {computerChoice}");
+                Console.WriteLine($"this player selection choice is {playerselection}");
+                if (playerselection == "Rock")
                 {
                     computerwins++;
                 }
-                else if (playerselection == "paper")
+                else if (playerselection == "Paper")
                 {
                     tiedgame++;
                 }
-                else if (playerselection == "scissors")
+                else if (playerselection == "Scissors")
                 {
                     playerwins++;
                 }
@@ -67,15 +75,17 @@ namespace RPSAPI.Controllers
             else if (computerChoice == 3)
             //scissors
             {
-                if (playerselection == "rock")
+                Console.WriteLine($"this cpu choice is {computerChoice}");
+                Console.WriteLine($"this player selection choice is {playerselection}");
+                if (playerselection == "Rock")
                 {
                     playerwins++;
                 }
-                else if (playerselection == "paper")
+                else if (playerselection == "Paper")
                 {
                     computerwins++;
                 }
-                else if (playerselection == "scissors")
+                else if (playerselection == "Scissors")
                 {
                     tiedgame++;
                 }
@@ -87,7 +97,7 @@ namespace RPSAPI.Controllers
             resultsclass result = new resultsclass();
 
            
-            Console.WriteLine($"youwon this many times: {playerwins}");
+            Console.WriteLine($"you won this many times: {playerwins}");
             Console.WriteLine(computerwins);
             Console.WriteLine(tiedgame);
 
@@ -100,14 +110,14 @@ namespace RPSAPI.Controllers
                 
                 return result;
             }
-            else if (playerwins < computerwins)
+           if (playerwins < computerwins)
                 {
                     result.ResultofGame = $"The computer chose: {computerChoice} and you lose!";
                     Console.WriteLine(result);
                     
                     return result;
                 }
-           else
+           if (playerwins == computerwins)
                 {
                     //tiedgame
 
@@ -116,6 +126,10 @@ namespace RPSAPI.Controllers
                    
                     return result;
                 }
+            else
+            {
+                return result;
+            }
             }
         }
     }

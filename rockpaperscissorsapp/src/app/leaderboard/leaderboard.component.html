@@ -1,0 +1,9 @@
+<h1>Leaderboard</h1>
+<div *ngFor="let ListItem of leaderslistService.LeaderboardItem | slice:0:3;">
+  <div class="Listitem">
+      <div>{{ ListItem.username }}</div>
+      <div>{{ ListItem.winRatio }}%</div>
+      <div>{{ ListItem.turnPlayed}}</div>
+      <!-- <div class="LIRightAlign">{{ListItem.gameResultString}}</div> -->
+  </div>
+</div>
